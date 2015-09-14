@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<h1>
+  <%= @question.content %>
+</h1>
+
+<% if @question.style == 'multiple' %>
+  <%= @answer.choice.name %>
+<% end %>
+
+<%= link_to 'Edit', edit_answer_path(@answer) %> |
+<%= link_to 'Back', answers_path %>

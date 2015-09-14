@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <%= @question.content %>
+</h1>
+
+<% if @question.style == 'multiple' %>
+  <% @question.choices.each_with_index do |choice, i| %>
+    <h2><%= i+1 %>. <%= choice.name %></h2>
+  <% end %>
+<% end %>
+
+
+<div class='well'>
+  <h1><%= @answers.length %> Answers</h1>
+
+  <table class='table table-default table-striped'>
+    <tr>
+      <th>Answer</th>
+      <th>Created At</th>
+    </tr>
+
+    <% @answers.each do |answer| %>
+      <tr>
+        <td>
+          <% if @question.style == 'multiple' %>
+            <%= answer.choice.name %>
+          <% end %>
+          <% if @question.style == 'bool' %>
+            <% if answer.yes_no == true %>
+              Yes
+            <% elsif answer.yes_no == false %>
+              No
+            <% end %>
+          <% end %>
+          <% if @question.style == 'freeform' %>
+            <%= answer.content %>
+          <% end %>
+        </td>
+        <td><%= answer.created_at %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<%= link_to 'Back', questions_path %>

@@ -1,0 +1,55 @@
+<%= form_for(@question) do |f| %>
+
+  <!-- this is for handling validation errors -->
+
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+      <% @question.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- these are the fields -->
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :style %>
+
+    <%= f.select(:style, Question.styles.keys.map {|style| [style.titleize,style]}, {include_blank: true}, {class: 'form-control'}) %>
+  </div>
+
+  <script>
+    $('#question_style').change(function () {
+        if ($(this).val() == 'multiple') {
+            $('.well').show('slow');
+        } else {
+            $('.well').hide('slow');
+        }
+    });
+  </script>
+
+
+  <div class='well' style='display: none;'>
+    <h1>Choices</h1>
+    <div id='choices'>
+      <%= f.fields_for :choices do |f| %>
+        <%= render 'choice_fields', :f => f %>
+      <% end %>
+    </div>
+
+    <%= link_to_add_association "Add Choice", f, :choices, class: 'btn btn-default', "data-association-insertion-node" => '#choices', "data-association-insertion-method" => "append" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: 'btn btn-default' %>
+  </div>
+<% end %>
