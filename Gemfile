@@ -30,9 +30,24 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#### everything above here, was added by rails as the default
+
+# stuff that ryan and ben added
+
+# bootstrap gives you basic buttons and looks
 gem 'bootstrap-sass', '~> 3.3.5'
+
+# nested tables (like choices to a multiple choice question)
 gem 'cocoon'
+
+# your database server, postgres
 gem 'pg'
+
+# authentication for user login
+gem 'devise'
+
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
