@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<div class='col-md-8'>
+<div class='panel panel-default'>
+<div class='panel-body'>
 <h1>Listing Questions</h1>
 
 <table class='table table-default table-striped'>
@@ -22,7 +25,7 @@
         <td><%= question.answers.length %></td>
         <td>
           <%= link_to 'Answer', new_question_answer_path(question), class: 'btn btn-default' %>
-          <%= link_to 'Show', question, class: 'btn btn-default' %>
+          <%= link_to '', question, class: 'btn btn-default glyphicon glyphicon-camera' %>
           <% if current_user and current_user.role == 'admin' %>
             <%= link_to 'Edit', edit_question_path(question), class: 'btn btn-default' %>
             <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
@@ -34,5 +37,19 @@
 </table>
 
 <br>
+<% if current_user %>
+  <%= link_to 'New Question', new_question_path, class: 'btn btn-default' %>
+<% end %>
 
-<%= link_to 'New Question', new_question_path, class: 'btn btn-default' %>
+</div>
+</div>
+
+</div>
+
+<div class='col-md-4'>
+  <div class='panel panel-default'>
+    <div class='panel-body'>
+      <%= render "devise/sessions/form" %>
+    </div>
+  </div>
+</div>
