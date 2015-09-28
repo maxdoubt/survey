@@ -23,8 +23,10 @@
         <td>
           <%= link_to 'Answer', new_question_answer_path(question), class: 'btn btn-default' %>
           <%= link_to 'Show', question, class: 'btn btn-default' %>
-          <%= link_to 'Edit', edit_question_path(question), class: 'btn btn-default' %>
-          <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+          <% if current_user and current_user.role == 'admin' %>
+            <%= link_to 'Edit', edit_question_path(question), class: 'btn btn-default' %>
+            <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+          <% end %>
         </td>
       </tr>
     <% end %>

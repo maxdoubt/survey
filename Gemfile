@@ -30,23 +30,18 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-#### everything above here, was added by rails as the default
+
+
+#### everything above here, was added by rails as the default  ####
 
 # stuff that ryan and ben added
 
-# bootstrap gives you basic buttons and looks
-gem 'bootstrap-sass', '~> 3.3.5'
-
-# nested tables (like choices to a multiple choice question)
-gem 'cocoon'
-
-# your database server, postgres
-gem 'pg'
-
-# authentication for user login
-gem 'devise'
-
-
+gem 'bootstrap-sass', '~> 3.3.5'  # bootstrap gives you basic buttons and looks
+gem 'cocoon'                      # nested tables (like choices to a multiple choice question)
+gem 'pg'                          # your database server, postgres
+gem 'devise'                      # authentication for user login
+gem 'seedbank'                    # helps manage seeds
+gem 'pundit'                      # policy based permissions
 
 
 group :development, :test do

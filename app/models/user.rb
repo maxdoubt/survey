@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # constants
-  enum role: [:admin,:general]
+  enum role: [:admin, :general]
          
          
          
