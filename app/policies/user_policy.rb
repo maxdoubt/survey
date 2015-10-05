@@ -1,4 +1,4 @@
-class UserPolicy < StockMarket::ApplicationPolicy
+class UserPolicy < ApplicationPolicy
 
   #------------------------------------------------------
   # Public Methods
