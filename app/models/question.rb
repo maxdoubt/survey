@@ -6,5 +6,4 @@ class Question < ActiveRecord::Base
   # constants
   enum style: [:multiple, :bool, :freeform]
 
-
 end
