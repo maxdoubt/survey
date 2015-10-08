@@ -15,4 +15,6 @@
 //= require bootstrap-sprockets
 //= require cocoon
 //= require turbolinks
+//= require phaser
+//= require group_vs_group
 //= require_tree .

@@ -43,6 +43,7 @@ gem 'devise'                      # authentication for user login
 gem 'seedbank'                    # helps manage seeds
 gem 'pundit'                      # policy based permissions
 gem 'redcarpet'                   # markdown processor
+gem 'phaser-rails'                # phaser.io javascript library for rails
 
 
 group :development, :test do
