@@ -42,6 +42,7 @@ gem 'pg'                          # your database server, postgres
 gem 'devise'                      # authentication for user login
 gem 'seedbank'                    # helps manage seeds
 gem 'pundit'                      # policy based permissions
+gem 'redcarpet'                   # markdown processor
 
 
 group :development, :test do

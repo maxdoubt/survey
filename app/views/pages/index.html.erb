@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class='panel panel-default'>
+  <div class='panel-heading'>
+    <h1>Listing Pages</h1>
+    <%= link_to 'New Page', new_page_path, class: 'btn btn-default btn-xs' %>
+  </div>
+
+  <div class='panel-body'>
+    <table class='table table-default'>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @pages.each do |page| %>
+          <tr>
+            <td><%= page.title %></td>
+            <td>
+              <%= link_to 'Show', page, class: 'btn btn-default' %>
+              <% if current_user and current_user.role == 'admin' %>
+                <%= link_to 'Edit', edit_page_path(page), class: 'btn btn-default' %>
+                <%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
