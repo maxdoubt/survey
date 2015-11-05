@@ -45,8 +45,10 @@ ActiveRecord::Schema.define(version: 20151008014321) do
     t.integer  "clicks"
     t.integer  "votes"
     t.integer  "style"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "image"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

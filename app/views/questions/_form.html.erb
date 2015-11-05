@@ -16,16 +16,27 @@
 
   <!-- these are the fields -->
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :content %>
     <%= f.text_area :content, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :style %>
 
     <%= f.select(:style, Question.styles.keys.map {|style| [style.titleize,style]}, {include_blank: true}, {class: 'form-control'}) %>
   </div>
+
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.text_area :image, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control' %>
+  </div>
+
 
   <script>
     $('#question_style').change(function () {

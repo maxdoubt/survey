@@ -5,6 +5,8 @@ class CreateQuestions < ActiveRecord::Migration
       t.integer :clicks
       t.integer :votes
       t.integer :style
+      t.text    :image
+      t.text    :description
 
       t.timestamps null: false
     end

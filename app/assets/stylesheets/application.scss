@@ -18,15 +18,17 @@ $navbar-inverse-bg: #23346f !default;
 $navbar-inverse-color: #fff !default;
 $navbar-inverse-link-color: #fff !default;
 
+$font-size-base: 18px !default;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 body {
   background-image: url('http://assets.rollingstone.com/assets/2015/article/fetty-wap-goes-hard-on-new-song-boomin-20150624/200716/large_rect/1435169308/1401x788-fetty_Wap.jpg');
-  background-size: contain;
+  background-size: cover;
   background-attachment: fixed;
   opacity: .9;
+  font-family: 'StyleWars';
 }
 
 .monospace {
@@ -36,3 +38,42 @@ body {
 .navbar-brand {
   padding: 6px 15px;
 }
+
+
+@font-face {
+  font-family: 'Abuse';
+  src: url('Abuse.eot'); /* IE9 Compat Modes */
+  src: url('Abuse.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Abuse.woff') format('woff'), /* Modern Browsers */
+       url('Abuse.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Abuse.svg#19168d0bf6f274fb7ff5e53ba0ec0580') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'YouKnowIt';
+  src: url('YouKnowIt.eot'); /* IE9 Compat Modes */
+  src: url('YouKnowIt.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('YouKnowIt.woff') format('woff'), /* Modern Browsers */
+       url('YouKnowIt.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('YouKnowIt.svg#924d9811c22b8d3e33911f2d5e7e6cf3') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'StyleWars';
+  src: url('STYLEWARS 2011.eot'); /* IE9 Compat Modes */
+  src: url('STYLEWARS 2011.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('STYLEWARS 2011.woff') format('woff'), /* Modern Browsers */
+       url('STYLEWARS 2011.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('STYLEWARS 2011.svg#b9a68b67f1a168b5ed56d55de1e4ebb5') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+

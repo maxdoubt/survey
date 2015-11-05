@@ -14,7 +14,7 @@
   <div class='panel panel-default'>
 
     <div class='panel-heading'>
-      <h1><%= @question.content %></h1>
+      <h1><%= @question.description %> <%= @question.content %></h1>
     </div>
 
     <div class='panel-body'>
@@ -57,6 +57,14 @@
     <div class="panel-footer">
       <%= f.submit 'Save', class: 'btn btn-default' %>
     </div>
+
+
+    <style>
+      body {
+        background-image: url('<%= @question.image %>');
+      }
+    </style>
+
 
   </div>
 <% end %>
