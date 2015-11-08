@@ -6,4 +6,12 @@ class Question < ActiveRecord::Base
   # constants
   enum style: [:multiple, :bool, :freeform]
 
+  def unanswered(current_user)
+    if self.answers.where(user_id: current_user.id).length == 0
+      return true
+    else
+      return false
+    end
+  end
+
 end

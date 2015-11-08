@@ -26,11 +26,19 @@ class AnswersController < ApplicationController
   # POST /answers
   # POST /answers.json
   def create
-    @answer = Answer.new(answer_params)
+    @answer         = Answer.new(answer_params)
+    @answer.user_id = current_user.id
 
     respond_to do |format|
       if @answer.save
-        format.html { redirect_to @answer.question, notice: 'Answer was successfully created.' }
+        format.html {
+          next_question_id = @answer.question_id + 1
+          if next_question_id == 20
+            redirect_to questions_path, notice: 'You completed the last question! Thanks for your help!'
+          else
+            redirect_to new_question_answer_path(next_question_id), notice: 'Thank you for your answer, can you please answer the next question.'
+          end 
+        }
         format.json { render :show, status: :created, location: @answer }
       else
         format.html { render :new }
