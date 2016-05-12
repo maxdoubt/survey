@@ -51,6 +51,8 @@
 
 </div>
 
+<% if !current_user %>
 <div class='col-md-4'>
   <%= render "devise/sessions/form" %>
 </div>
+<% end %>

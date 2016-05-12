@@ -15,8 +15,6 @@ pg: &pg
   port:     5432
   encoding: utf8
   template: template0
-  username: dbuser
-  password: dbuser
 
 #------------------------------------------------------------
 # environments

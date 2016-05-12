@@ -28,12 +28,13 @@ class AnswersController < ApplicationController
   def create
     @answer         = Answer.new(answer_params)
     @answer.user_id = current_user.id
+    @question       = @answer.question
 
     respond_to do |format|
       if @answer.save
         format.html {
           next_question_id = @answer.question_id + 1
-          if next_question_id == 20
+          if next_question_id == Question.all.length + 1
             redirect_to questions_path, notice: 'You completed the last question! Thanks for your help!'
           else
             redirect_to new_question_answer_path(next_question_id), notice: 'Thank you for your answer, can you please answer the next question.'
